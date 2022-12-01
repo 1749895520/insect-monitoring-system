@@ -1,0 +1,5 @@
+files:
+  upload:
+    #    path: D:/ZFiend/Project/JiXieWeb/SpringBoot/file/
+    path: /home/xhgw/file/
+

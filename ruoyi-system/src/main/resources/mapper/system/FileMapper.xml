@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.FileMapper">
+    <insert id="saveOrUpdate" parameterType="com.ruoyi.system.entity.Files">
+        insert into sys_file (name, type, size, url, is_delete, enable, md5, did, time)
+        values (#{name}, #{type}, #{size}, #{url}, #{isDelete}, #{enable}, #{md5}, #{did}, #{time})
+        on duplicate key update name      = #{name},
+                                type      = #{type},
+                                size      = #{size},
+                                url       = #{url},
+                                is_delete = #{isDelete},
+                                enable    = #{enable},
+                                md5       = #{md5},
+                                did       = #{did},
+                                time      = #{time}
+
+    </insert>
+
+    <select id="getOne" resultType="com.ruoyi.system.entity.Files">
+        select *
+        from sys_file
+        where md5 = #{md5}
+    </select>
+    <select id="getList" resultType="com.ruoyi.system.entity.Files">
+        select *
+        from sys_file
+        order by id
+    </select>
+</mapper>

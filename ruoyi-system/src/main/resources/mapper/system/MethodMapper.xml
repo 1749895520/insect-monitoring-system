@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.MethodMapper">
+    <insert id="insert" parameterType="com.ruoyi.system.entity.Method">
+        insert into method(context, iid)
+        VALUES (#{context}, #{iid})
+    </insert>
+    <update id="update" parameterType="com.ruoyi.system.entity.Method">
+        update method
+        set context = #{context},
+            iid=#{iid}
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="com.ruoyi.system.entity.Method">
+        delete
+        from method
+        where id = #{id}
+    </delete>
+
+    <select id="getList" resultType="com.ruoyi.system.entity.Method">
+        select *
+        from method
+    </select>
+</mapper>
